@@ -234,6 +234,246 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+
+
+
+
+    /* ============ CERITA KAMI / TIMELINE ============ */
+    #story .inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 18px;
+      padding-bottom: 28px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    /* Marker (titik + garis) */
+    .timeline-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 20px;
+      position: relative;
+    }
+
+    .tl-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold), 0 6px 14px rgba(0, 0, 0, 0.12);
+      flex-shrink: 0;
+      z-index: 2;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .timeline-item.reveal.in .tl-dot {
+      transform: scale(1.15);
+      box-shadow: 0 0 0 3px var(--gold-light), 0 8px 20px rgba(201, 168, 102, 0.35);
+    }
+
+    .tl-dot-last {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    }
+
+    .tl-line {
+      flex: 1;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
+      margin-top: 6px;
+      min-height: 32px;
+      opacity: 0.5;
+    }
+
+    .tl-line-last {
+      background: transparent;
+      min-height: 0;
+    }
+
+    /* Kartu konten */
+    .timeline-card {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 20px 22px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 12px 30px -12px hsla(var(--shadow-color), 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-item.reveal.in .timeline-card {
+      transform: translateX(0);
+    }
+
+    /* Efek garis emas di kiri kartu */
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18%;
+      height: 64%;
+      width: 3px;
+      background: linear-gradient(180deg, var(--gold-light), var(--gold), var(--gold-light));
+      border-radius: 4px;
+      opacity: 0.5;
+    }
+
+    .tl-date {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--royal);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 8px;
+    }
+
+    .tl-label {
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      color: var(--midnight);
+      letter-spacing: 0.3px;
+    }
+
+    .tl-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--ink);
+      margin: 0;
+      padding-left: 4px;
+      opacity: 0.9;
+    }
+
+    .tl-quote::before {
+      content: '\201C';
+      font-size: 28px;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+      margin-right: 2px;
+      opacity: 0.6;
+    }
+
+    .tl-quote::after {
+      content: '\201D';
+      font-size: 28px;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      line-height: 0;
+      margin-left: 2px;
+      opacity: 0.6;
+    }
+
+    /* Story closing */
+    .story-closing {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 0 8px;
+    }
+
+    .story-closing-line {
+      width: 48px;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.5;
+    }
+
+    .story-closing-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--midnight);
+      line-height: 1.8;
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+
+    /* ===== Animasi tambahan untuk timeline ===== */
+    .timeline-item.reveal {
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .timeline-item.reveal.in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Stagger delay biar animasi bertahap */
+    .timeline-item:nth-child(1).reveal {
+      transition-delay: 0.05s;
+    }
+    .timeline-item:nth-child(2).reveal {
+      transition-delay: 0.15s;
+    }
+    .timeline-item:nth-child(3).reveal {
+      transition-delay: 0.25s;
+    }
+    .timeline-item:nth-child(4).reveal {
+      transition-delay: 0.35s;
+    }
+    .timeline-item:nth-child(5).reveal {
+      transition-delay: 0.45s;
+    }
+
+    /* Responsive kecil */
+    @media (max-width: 380px) {
+      .timeline-wrap {
+        padding-left: 12px;
+      }
+      .timeline-card {
+        padding: 16px 16px 18px;
+      }
+      .tl-quote {
+        font-size: 14.5px;
+      }
+      .tl-date {
+        font-size: 12px;
+      }
+      .tl-label {
+        font-size: 14px;
+      }
+      .story-closing-text {
+        font-size: 16px;
+      }
+    }
+
+
+
+
     /* ============ SECTIONS GENERAL ============ */
     .section {
       position: relative;
@@ -930,6 +1170,7 @@
       .cover-names { font-size: 34px; }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -1035,6 +1276,117 @@
         </div>
       </div>
     </section>
+
+
+
+
+
+    <!-- ============ CERITA KAMI / TIMELINE ============ -->
+    <section class="section section-sky" id="story">
+      <!-- Decorative corners -->
+      <div class="deco-corner br" style="width:100px; bottom:-5px; right:-15px;">
+        <img src="bunga-nama.png" alt="Dekorasi bunga">
+      </div>
+      <div class="deco-corner tl" style="width:90px; top:-5px; left:-15px;">
+        <img src="bunga-nama-1.png" alt="Dekorasi bunga">
+      </div>
+
+      <div class="inner">
+        <div class="eyebrow-sm reveal">Perjalanan Cinta</div>
+        <div class="section-title reveal">Cerita Kami</div>
+        <div class="divider reveal"></div>
+
+        <!-- ===== TIMELINE ===== -->
+        <div class="timeline-wrap">
+
+          <!-- Item 1 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="tl-dot"></span>
+              <span class="tl-line"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-date">2023 <span class="tl-label">— Mula Sebuah Bab</span></div>
+              <blockquote class="tl-quote">
+                “Di antara jutaan takdir yang bersilang, langkah kita berpapasan. Sebuah perkenalan sederhana yang diam-diam menyimpan jawaban atas doa-doa yang belum sempat terucap.”
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="tl-dot"></span>
+              <span class="tl-line"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-date">Januari 2024 <span class="tl-label">— Hangat yang Singgah</span></div>
+              <blockquote class="tl-quote">
+                “Awal tahun melukiskan cerita baru. Dalam riuh dan sunyinya hari, hadirmu menjadi bagian paling menenangkan—membuat riak kecil di hati yang perlahan bermuara pada rasa yakin.”
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="tl-dot"></span>
+              <span class="tl-line"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-date">29 Januari 2024 <span class="tl-label">— Melangkah Bersama</span></div>
+              <blockquote class="tl-quote">
+                “Kini bukan lagi tentang 'aku' atau 'kamu', melainkan 'kita'. Hari di mana jemari kita saling bertaut, mengukir janji untuk saling memeluk kelebihan dan melengkapi kekurangan.”
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="tl-dot"></span>
+              <span class="tl-line"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-date">26 Juli 2026 <span class="tl-label">— Dalam Pelukan Merestui</span></div>
+              <blockquote class="tl-quote">
+                “Waktu mendewasakan cinta kita. Di hadapan keluarga dan semesta yang merestui, sebuah cincin menjadi lambang bahwa niat mulia ini siap dituntaskan menuju keabadian.”
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="tl-dot tl-dot-last"></span>
+              <span class="tl-line tl-line-last"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-date">23 Agustus 2026 <span class="tl-label">— Menggapai Rumah Selamanya</span></div>
+              <blockquote class="tl-quote">
+                “Hari di mana dua takdir tak lagi berjalan beriringan, melainkan melebur dalam satu napas dan satu atap. Titik awal dari petualangan terindah sepanjang usia kita.”
+              </blockquote>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Penutup -->
+        <div class="story-closing reveal">
+          <div class="story-closing-line"></div>
+          <p class="story-closing-text">
+            “Dari sekadar menyapa, hingga akhirnya kita bernapas di bawah langit yang sama sebagai sepasang jiwa yang tak terpisahkan.”
+          </p>
+          <div class="story-closing-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
 
     <!-- SAVE THE DATE / COUNTDOWN -->
     <section class="section section-deep" id="date">
@@ -1218,8 +1570,8 @@
         <div class="closing-names">Alip &amp; Lala</div>
 
         <!-- Motif band kecil di footer -->
-        <div class="motif-band empty" style="max-width:220px; margin:14px auto 0; height:48px;">
-          Slot motif budaya (opsional)
+        <div class="motif-band empty" style="max-width:420px; margin:14px auto 0; height:48px;">
+          <img src="motif-jawa-betawi.png" alt="Motif budaya">
         </div>
 
         <div class="footer-note">Wedding Invitation &copy; 2026</div>
@@ -1324,23 +1676,81 @@
       });
     }
 
-    // ============ RSVP / WISHES ============
-    const STORAGE_KEY = 'wedding_wishes_alip_lala';
+    // ============ RSVP / WISHES with Supabase ============
+    const SUPABASE_URL = "https://kcrwhcyitgdklhznusmj.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjcndoY3lpdGdka2xoem51c21qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM3NjAxNDYsImV4cCI6MjA1OTMzNjE0Nn0.ThO9kNN52qy70Xeqd1enPV3OZPjrkCI30wuyelqG1Q4";
 
-    function loadWishes() {
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    // Buat client dengan nama unik
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function loadWishes() {
       const list = document.getElementById('wishesList');
-      list.innerHTML = '';
-      data.slice().reverse().forEach(w => {
-        const div = document.createElement('div');
-        div.className = 'wish-item';
-        div.innerHTML =
-          `<div class="wn">${escapeHtml(w.name)}</div>
-           <div class="wm">${escapeHtml(w.message || '')}</div>
-           <div class="wa">${escapeHtml(w.attend)}</div>`;
-        list.appendChild(div);
-      });
+      list.innerHTML = '<div style="text-align:center;padding:12px;color:var(--royal);">Memuat ucapan...</div>';
+
+      try {
+        const { data, error } = await supabaseClient
+          .from('wishes')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(50);
+
+        if (error) throw error;
+
+        list.innerHTML = '';
+        if (!data || data.length === 0) {
+          list.innerHTML = '<div style="text-align:center;padding:12px;opacity:0.5;">Belum ada ucapan. Jadilah yang pertama!</div>';
+          return;
+        }
+
+        data.forEach(w => {
+          const div = document.createElement('div');
+          div.className = 'wish-item';
+          div.innerHTML = `
+            <div class="wn">${escapeHtml(w.name)}</div>
+            <div class="wm">${escapeHtml(w.message || '')}</div>
+            <div class="wa">${escapeHtml(w.attend)}</div>
+          `;
+          list.appendChild(div);
+        });
+      } catch (err) {
+        console.error(err);
+        list.innerHTML = '<div style="text-align:center;padding:12px;color:#c0392b;">Gagal memuat ucapan. Coba lagi nanti.</div>';
+      }
     }
+
+    document.getElementById('wishForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('wname').value.trim();
+      const attend = document.getElementById('wattend').value;
+      const message = document.getElementById('wmsg').value.trim();
+
+      if (!name) {
+        alert('Nama wajib diisi');
+        return;
+      }
+
+      const btn = this.querySelector('.rsvp-submit');
+      btn.disabled = true;
+      btn.textContent = 'Mengirim...';
+
+      try {
+        const { error } = await supabaseClient
+          .from('wishes')
+          .insert([{ name, attend, message }]);
+
+        if (error) throw error;
+
+        this.reset();
+        await loadWishes();
+        alert('Ucapan Anda berhasil terkirim!');
+      } catch (err) {
+        console.error(err);
+        alert('Terjadi kesalahan. Silakan coba lagi.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Kirim Ucapan';
+      }
+    });
 
     function escapeHtml(str) {
       const div = document.createElement('div');
@@ -1348,22 +1758,16 @@
       return div.innerHTML;
     }
 
-    document.getElementById('wishForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('wname').value.trim();
-      const attend = document.getElementById('wattend').value;
-      const message = document.getElementById('wmsg').value.trim();
-      if (!name) return;
-
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      data.push({ name, attend, message, ts: Date.now() });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-
-      document.getElementById('wishForm').reset();
-      loadWishes();
-    });
-
+    // Muat ucapan pertama kali
     loadWishes();
+
+    // Realtime subscription (gunakan supabaseClient juga)
+    supabaseClient
+      .channel('wishes-channel')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'wishes' }, () => {
+        loadWishes();
+      })
+      .subscribe();
   </script>
 
 </body>
