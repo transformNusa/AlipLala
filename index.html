@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ngunduh Mantu Alip & Lala</title>
-  <meta name="description" content="Undangan Pernikahan Alip Tabah Saputro & Siti Fadilah Zahro Jaelani">
+  <meta name="description" content="Undangan Ngunduh Mantu Alip Tabah Saputro & Siti Fadilah Zahro Jaelani">
 
   <meta property="og:title" content="Ngunduh Mantu Alip & Lala">
   <meta property="og:description" content="Dengan penuh rasa syukur, kami mengundang Anda untuk menghadiri Ngunduh Mantu kami, 20 September 2026">
@@ -18,19 +18,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ============ GAYA UTAMA ============ */
+    /* ============ GAYA UTAMA (FULL JAWA SOLO) ============ */
     :root {
-      --midnight: #182a52;
-      --royal: #3d5a99;
-      --sky: #7f9fd6;
-      --sky-soft: #b7c9ec;
-      --cloud: #eef2fb;
-      --cloud-2: #f7f9fd;
-      --gold: #c9a866;
-      --gold-light: #e8d5a3;
+      --midnight: #3a2618; /* Cokelat gelap kopi */
+      --royal: #6b4423; /* Cokelat kayu/Sogan */
+      --sky: #c9a866; /* Emas redup */
+      --sky-soft: #eaddc5; /* Krem hangat */
+      --cloud: #fbf6ec; /* Putih tulang/kertas tua */
+      --cloud-2: #f2e5d0; /* Krem gelap sedikit */
+      --gold: #b8860b; /* Emas klasik */
+      --gold-light: #dfc282; /* Emas terang */
       --white: #ffffff;
-      --ink: #233657;
-      --shadow-color: 220, 40%, 30%;
+      --ink: #2b1c11; /* Teks cokelat sangat pekat */
+      --shadow-color: 25, 40%, 20%; /* Shadow kecokelatan */
     }
 
     * {
@@ -76,7 +76,7 @@
       margin: 0 auto;
       z-index: 100;
       background: 
-        linear-gradient(160deg, rgba(20, 38, 80, 0.82) 0%, rgba(35, 60, 115, 0.78) 45%, rgba(60, 90, 155, 0.75) 100%),
+        linear-gradient(160deg, rgba(58, 38, 24, 0.85) 0%, rgba(41, 26, 16, 0.8) 45%, rgba(107, 68, 35, 0.8) 100%),
         url('cover-bg.jpg'); /* <-- GANTI dengan file gambar cover Anda */
       background-size: cover;
       background-position: center 20%;
@@ -489,7 +489,7 @@
       background: linear-gradient(180deg, var(--cloud) 0%, var(--cloud-2) 100%);
     }
     .section-deep {
-      background: linear-gradient(160deg, #1a2f5c 0%, #24417c 100%);
+      background: linear-gradient(160deg, #3a2618 0%, #291a10 100%);
       color: var(--white);
     }
 
@@ -695,14 +695,9 @@
       border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
-    /* Khusus pria – motif Jawa */
-    .couple-card.pria {
-      background-image: url('motif-jawa-bg.png'); /* GANTI dengan gambar motif Jawa Anda */
-    }
-
-    /* Khusus wanita – motif Betawi */
-    .couple-card.wanita {
-      background-image: url('motif-betawi-bg.png'); /* GANTI dengan gambar motif Betawi Anda */
+    /* Khusus pria & wanita – motif Jawa Solo */
+    .couple-card.pria, .couple-card.wanita {
+      background-image: url('motif-batik-solo-bg.png'); /* GANTI dengan gambar motif Jawa Solo Anda */
     }
 
     /* Efek tambahan agar teks lebih terbaca */
@@ -725,7 +720,7 @@
       z-index: 2;
     }
 
-    /* === style foto dll (tidak berubah) === */
+    /* === style foto dll === */
     .photo-frame {
       width: 168px;
       height: 168px;
@@ -1225,27 +1220,20 @@
       </div>
     </section>
 
-    <!-- COUPLE – dengan background motif di masing-masing kartu -->
+    <!-- COUPLE – Full Motif Jawa Solo -->
     <section class="section section-sky" id="couple">
       <div class="inner reveal">
         <div class="eyebrow-sm">Mempelai</div>
         <div class="section-title">Kami Yang Berbahagia</div>
         <div class="divider"></div>
 
-        <!-- Motif band tetap ada sebagai aksen (opsional) -->
-        <!-- <div class="motif-band" style="max-width:280px; margin:0 auto;">
-          <img src="motif-jawa.png" alt="Motif budaya">
+        <!-- Aksen Pita Motif Batik Solo -->
+        <div class="motif-band" style="max-width:320px; margin:0 auto;">
+          <img src="motif-jawa.png" alt="Motif Batik Solo">
         </div>
-        <div class="motif-band" style="max-width:280px; margin:0 auto;">
-          <img src="motif-betawi.png" alt="Motif budaya">
-        </div> -->
-        <!-- <div class="motif-caption" style="max-width:280px;">
-          <span>Motif Jawa &middot; Solo</span>
-          <span>Motif Betawi &middot; Tangerang</span>
-        </div> -->
 
         <div class="couple-wrap">
-          <!-- PRIA – background motif Jawa -->
+          <!-- PRIA & WANITA menggunakan seragam motif Jawa Solo -->
           <div class="couple-card pria">
             <div class="photo-frame">
               <div class="photo-inner">
@@ -1254,15 +1242,11 @@
             </div>
             <div class="couple-name">Alip Tabah Saputro</div>
             <div class="couple-parent">Putra dari<br><b>Bapak Sumino</b> &amp; <b>Ibu Siti Aminah</b></div>
-            <!-- <div class="culture-tag"> -->
-              <!-- <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>
-              Adat Jawa &middot; Solo
-            </div> -->
           </div>
 
           <div class="amp-mid">&amp;</div>
 
-          <!-- WANITA – background motif Betawi -->
+          <!-- WANITA -->
           <div class="couple-card wanita">
             <div class="photo-frame">
               <div class="photo-inner">
@@ -1271,117 +1255,10 @@
             </div>
             <div class="couple-name">Siti Fadilah Zahro Jaelani</div>
             <div class="couple-parent">Putri dari<br><b>Bapak Jujun Jaelani</b> &amp; <b>Ibu Suntiah</b></div>
-            <!-- <div class="culture-tag">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>
-              Adat Betawi &middot; Tangerang
-            </div> -->
           </div>
         </div>
       </div>
     </section>
-
-
-
-
-
-    <!-- ============ CERITA KAMI / TIMELINE ============ -->
-    <!-- <section class="section section-sky" id="story">
-      <div class="deco-corner br" style="width:100px; bottom:-5px; right:-15px;">
-        <img src="bunga-nama.png" alt="Dekorasi bunga">
-      </div>
-      <div class="deco-corner tl" style="width:90px; top:-5px; left:-15px;">
-        <img src="bunga-nama-1.png" alt="Dekorasi bunga">
-      </div>
-
-      <div class="inner">
-        <div class="eyebrow-sm reveal">Perjalanan Cinta</div>
-        <div class="section-title reveal">Cerita Kami</div>
-        <div class="divider reveal"></div>
-
-        <div class="timeline-wrap">
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker">
-              <span class="tl-dot"></span>
-              <span class="tl-line"></span>
-            </div>
-            <div class="timeline-card">
-              <div class="tl-date">2023 <span class="tl-label">— Mula Sebuah Bab</span></div>
-              <blockquote class="tl-quote">
-                “Di antara jutaan takdir yang bersilang, langkah kita berpapasan. Sebuah perkenalan sederhana yang diam-diam menyimpan jawaban atas doa-doa yang belum sempat terucap.”
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker">
-              <span class="tl-dot"></span>
-              <span class="tl-line"></span>
-            </div>
-            <div class="timeline-card">
-              <div class="tl-date">Januari 2024 <span class="tl-label">— Hangat yang Singgah</span></div>
-              <blockquote class="tl-quote">
-                “Awal tahun melukiskan cerita baru. Dalam riuh dan sunyinya hari, hadirmu menjadi bagian paling menenangkan—membuat riak kecil di hati yang perlahan bermuara pada rasa yakin.”
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker">
-              <span class="tl-dot"></span>
-              <span class="tl-line"></span>
-            </div>
-            <div class="timeline-card">
-              <div class="tl-date">29 Januari 2024 <span class="tl-label">— Melangkah Bersama</span></div>
-              <blockquote class="tl-quote">
-                “Kini bukan lagi tentang 'aku' atau 'kamu', melainkan 'kita'. Hari di mana jemari kita saling bertaut, mengukir janji untuk saling memeluk kelebihan dan melengkapi kekurangan.”
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker">
-              <span class="tl-dot"></span>
-              <span class="tl-line"></span>
-            </div>
-            <div class="timeline-card">
-              <div class="tl-date">26 Juli 2026 <span class="tl-label">— Dalam Pelukan Merestui</span></div>
-              <blockquote class="tl-quote">
-                “Waktu mendewasakan cinta kita. Di hadapan keluarga dan semesta yang merestui, sebuah cincin menjadi lambang bahwa niat mulia ini siap dituntaskan menuju keabadian.”
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker">
-              <span class="tl-dot tl-dot-last"></span>
-              <span class="tl-line tl-line-last"></span>
-            </div>
-            <div class="timeline-card">
-              <div class="tl-date">23 Agustus 2026 <span class="tl-label">— Menggapai Rumah Selamanya</span></div>
-              <blockquote class="tl-quote">
-                “Hari di mana dua takdir tak lagi berjalan beriringan, melainkan melebur dalam satu napas dan satu atap. Titik awal dari petualangan terindah sepanjang usia kita.”
-              </blockquote>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="story-closing reveal">
-          <div class="story-closing-line"></div>
-          <p class="story-closing-text">
-            “Dari sekadar menyapa, hingga akhirnya kita bernapas di bawah langit yang sama sebagai sepasang jiwa yang tak terpisahkan.”
-          </p>
-          <div class="story-closing-line"></div>
-        </div>
-
-      </div>
-    </section> -->
-
-
-
-
-
 
     <!-- SAVE THE DATE / COUNTDOWN -->
     <section class="section section-deep" id="date">
@@ -1414,19 +1291,6 @@
               Tambah ke Kalender
             </a>
           </div>
-
-          <!-- <div class="event-card">
-            <span class="ev-tag">Resepsi</span>
-            <div class="ev-name">Resepsi Pernikahan</div>
-            <div class="ev-detail">
-              <b>Minggu, 20 September 2026</b><br>
-              Pukul 10.00 WIB &mdash; selesai
-            </div>
-            <a class="cal-btn" href="#" onclick="addToCalendar('Resepsi Alip & Lala','20260920T100000','20260920T140000');return false;">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Tambah ke Kalender
-            </a>
-          </div> -->
         </div>
       </div>
     </section>
@@ -1566,7 +1430,7 @@
 
         <!-- Motif band kecil di footer -->
         <div class="motif-band empty" style="max-width:420px; margin:14px auto 0; height:48px;">
-          <img src="motif-jawa-betawi.png" alt="Motif budaya">
+          <img src="motif-jawa.png" alt="Motif Batik Solo">
         </div>
 
         <div class="footer-note">Alip Tabah S &copy; 2026</div>
@@ -1654,8 +1518,8 @@
 
     // ============ ADD TO CALENDAR ============
     function addToCalendar(title, start, end) {
-      const details = encodeURIComponent('Undangan Pernikahan Alip & Lala');
-      const location = encodeURIComponent('Gg. Mandala VII, Jl. Manis Raya II, RT.002/RW.003, Kenanga, Cipondoh, Tangerang, Banten');
+      const details = encodeURIComponent('Undangan Ngunduh Mantu Alip & Lala');
+      const location = encodeURIComponent('Dusun Penoh, Desa Gentan, Kec. Susukan, Kab. Semarang, Jawa Tengah');
       const url =
         `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${details}&location=${location}`;
       window.open(url, '_blank');
